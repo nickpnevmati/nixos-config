@@ -10,7 +10,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nuclear-desktop";
+  networking.hostName = "nuclear-laptop";
   networking.networkmanager.enable = true;
   networking.firewall = {
     enable = true;
