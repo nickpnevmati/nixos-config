@@ -7,6 +7,15 @@
 {
   imports = [ ./hardware-configuration.nix ];
 
+  hardware.opengl.extraPackages = with pkgs; [
+    rocmPackages.clr.icd
+  ];
+
+  boot.kernelParams = [
+    "video=DP-1:2560x1440@144"
+  ];
+
+  boot.initrd.kernelModules = [ "amdgpu" ];
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
@@ -60,6 +69,10 @@
     };
   };
 
+  systemd.tmpfiles.rules = [
+    "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}"
+  ];
+
   # List packages installed in system profile
   environment.systemPackages = with pkgs; [
     # Web Browsers
@@ -84,6 +97,7 @@
     autokey
     input-remapper
     qbittorrent
+    clinfo
 
     # Office
     libreoffice-qt6-fresh
@@ -160,6 +174,7 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
+  services.xserver.videoDrivers = [ "amdgpu" ];
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.autoNumlock = true;
   services.displayManager.defaultSession = "plasmax11";
