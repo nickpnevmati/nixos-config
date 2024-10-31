@@ -91,7 +91,6 @@
     spotify
     stremio
     digikam
-    mplayer
 
     # Utils
     flameshot
