@@ -32,7 +32,7 @@
 
   users.users.nick = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "audio" "bluetooth" ];
+    extraGroups = [ "wheel" "audio" "bluetooth" "docker" ];
   };
 
   users.extraGroups.vboxusers.members = [ "nick" ];
@@ -50,6 +50,14 @@
     host.enable = true;
     host.enableExtensionPack = true;
     guest.enable = true;
+  };
+
+  virtualisation.docker = {
+    enable = true;
+    rootless = {
+      enable = true;
+      setSocketVariable = true;
+    };
   };
 
   # List packages installed in system profile
