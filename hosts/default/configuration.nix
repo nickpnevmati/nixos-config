@@ -19,6 +19,8 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  time.hardwareClockInLocalTime = true;
+
   networking.hostName = "nuclear-desktop";
   networking.networkmanager.enable = true;
   networking.firewall = {
@@ -98,6 +100,7 @@
     input-remapper
     qbittorrent
     clinfo
+    woeusb
 
     # Office
     libreoffice-qt6-fresh
