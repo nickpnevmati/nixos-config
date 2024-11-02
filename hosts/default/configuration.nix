@@ -110,6 +110,7 @@
     wget
     unzip
     rar
+    ffmpeg
 
     # Development
     python3
