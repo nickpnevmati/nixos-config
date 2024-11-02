@@ -109,6 +109,7 @@
     tree
     wget
     unzip
+    rar
 
     # Development
     python3
