@@ -137,6 +137,7 @@
     kdePackages.yakuake
     kdePackages.kdeconnect-kde
     kdePackages.konsole
+    kdePackages.kdenlive
   ];
 
   fonts.packages = with pkgs; [
