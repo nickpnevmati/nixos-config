@@ -101,6 +101,7 @@
     qbittorrent
     clinfo
     woeusb
+    xdotool
 
     # Office
     libreoffice-qt6-fresh
@@ -193,8 +194,12 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
   services.xserver.videoDrivers = [ "amdgpu" ];
-  services.displayManager.sddm.enable = true;
-  services.displayManager.sddm.autoNumlock = true;
+
+  services.displayManager.sddm = {
+    enable = true;
+    autoNumlock = true;
+  };
+
   services.displayManager.defaultSession = "plasmax11";
   services.desktopManager.plasma6.enable = true;
 
