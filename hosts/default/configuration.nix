@@ -98,7 +98,7 @@
     flameshot
     autokey
     input-remapper
-    qbittorrent
+    # qbittorrent
     clinfo
     woeusb
     xdotool
