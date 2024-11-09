@@ -83,7 +83,7 @@
     flameshot
     autokey
     input-remapper
-    qbittorrent
+    # qbittorrent
 
     # Office
     libreoffice-qt6-fresh
