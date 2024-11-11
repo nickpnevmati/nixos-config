@@ -12,6 +12,7 @@
     ../../modules/packages/work.nix
     ../../modules/packages/docker.nix
     ../../modules/packages/virtualbox.nix
+    ../../modules/packages/input-remapper.nix
     ../../modules/users/nick.nix
   ];
 
@@ -120,6 +121,9 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
+
+  services.displayManager.defaultSession = "plasmax11";
+  services.desktopManager.plasma6.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb.layout = "us, gr";

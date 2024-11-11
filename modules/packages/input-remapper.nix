@@ -5,6 +5,6 @@
     input-remapper
   ];
 
-  services.displayManager.defaultSession = "plasmax11";
-  services.desktopManager.plasma6.enable = true;
+  services.input-remapper.enable = true;
+  services.input-remapper.enableUdevRules = true; # optional, enables udev rules for hotplugged devices
 }
