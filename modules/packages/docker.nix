@@ -13,5 +13,5 @@
     docker
     docker-compose
     kubernetes
-  ]
+  ];
 }
