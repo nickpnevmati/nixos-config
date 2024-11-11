@@ -5,24 +5,22 @@
 { config, lib, pkgs, ... }:
 
 {
-  imports = [ ./hardware-configuration.nix ];
+  imports = [
+    ./hardware-configuration.nix
+    ../../modules/packages/kde.nix
+    ../../modules/packages/work.nix
+    ../../modules/packages/docker.nix
+    ../../modules/packages/virtualbox.nix
+    ../../modules/users/nick.nix
+  ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  time.hardwareClockInLocalTime = true;
+
   networking.hostName = "nuclear-laptop";
   networking.networkmanager.enable = true;
-  networking.firewall = {
-    enable = true;
-    allowedTCPPortRanges = [
-      # Allow KDE Connect
-      { from = 1714; to = 1764; }
-    ];
-    allowedUDPPortRanges = [
-      # Allow KDE Connect
-      { from = 1714; to = 1764; }
-    ];
-  };
 
   time.timeZone = "Europe/Athens";
 
@@ -30,47 +28,14 @@
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  users.users.nick = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" "audio" "bluetooth" "docker" ];
-  };
-
-  users.extraGroups.vboxusers.members = [ "nick" ];
-
-  environment.plasma6.excludePackages = with pkgs.kdePackages; [
-    plasma-browser-integration
-    spectacle
-    discover
-    elisa
-    khelpcenter
-    gwenview
-  ];
-
-  virtualisation.virtualbox = {
-    host.enable = true;
-    host.enableExtensionPack = true;
-    guest.enable = true;
-  };
-
-  virtualisation.docker = {
-    enable = true;
-    rootless = {
-      enable = true;
-      setSocketVariable = true;
-    };
-  };
-
   # List packages installed in system profile
   environment.systemPackages = with pkgs; [
     # Web Browsers
     firefox
-    opera
-    google-chrome
     tor-browser
 
     # Comms
     discord
-    slack
     zoom-us
 
     #Media
@@ -82,8 +47,9 @@
     # Utils
     flameshot
     autokey
-    input-remapper
-    # qbittorrent
+    deluge
+    woeusb
+    xdotool
 
     # Office
     libreoffice-qt6-fresh
@@ -92,37 +58,39 @@
     tree
     wget
     unzip
+    rar
+    ffmpeg
 
     # Development
     python3
     vscode
-    docker
-    docker-compose
-    kubernetes
     insomnia
-    # bruno
     git
     gh
-    
+
     # Bluetooth
     bluez
-    bluedevil
 
     # Nixos Specifics
     nil
     nixpkgs-fmt
+  ];
 
-    # KDE Packages
-    kdePackages.okular
-    kdePackages.ark
-    kdePackages.dolphin
-    kdePackages.yakuake
-    kdePackages.kdeconnect-kde
-    kdePackages.konsole
+  fonts.packages = with pkgs; [
+    noto-fonts
+    noto-fonts-cjk
+    noto-fonts-emoji
+    liberation_ttf
+    fira-code
+    fira-code-symbols
+    mplus-outline-fonts.githubRelease
+    dina-font
+    proggyfonts
   ];
 
   # rtkit is optional but recommended
   security.rtkit.enable = true;
+
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -160,14 +128,11 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-  services.displayManager.sddm.enable = true;
-  services.displayManager.sddm.autoNumlock = true;
-  services.displayManager.defaultSession = "plasmax11";
-  services.desktopManager.plasma6.enable = true;
 
-  # Enable Input Remapper
-  services.input-remapper.enable = true;
-  services.input-remapper.enableUdevRules = true; # optional, enables udev rules for hotplugged devices
+  services.displayManager.sddm = {
+    enable = true;
+    autoNumlock = true;
+  };
 
   # DO NOT CHANGE THIS UNDER ANY CIRCUMSTANCE
   system.stateVersion = "24.05";

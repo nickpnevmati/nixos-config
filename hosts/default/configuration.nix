@@ -5,17 +5,16 @@
 { config, lib, pkgs, ... }:
 
 {
-  imports = [ ./hardware-configuration.nix ];
-
-  hardware.opengl.extraPackages = with pkgs; [
-    rocmPackages.clr.icd
+  imports = [
+    ./hardware-configuration.nix
+    ../../modules/packages/amdgpu.nix
+    ../../modules/packages/kde.nix
+    ../../modules/packages/work.nix
+    ../../modules/packages/docker.nix
+    ../../modules/packages/virtualbox.nix
+    ../../modules/users/nick.nix
   ];
 
-  boot.kernelParams = [
-    "video=DP-1:2560x1440@144"
-  ];
-
-  boot.initrd.kernelModules = [ "amdgpu" ];
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
@@ -23,17 +22,6 @@
 
   networking.hostName = "nuclear-desktop";
   networking.networkmanager.enable = true;
-  networking.firewall = {
-    enable = true;
-    allowedTCPPortRanges = [
-      # Allow KDE Connect
-      { from = 1714; to = 1764; }
-    ];
-    allowedUDPPortRanges = [
-      # Allow KDE Connect
-      { from = 1714; to = 1764; }
-    ];
-  };
 
   time.timeZone = "Europe/Athens";
 
@@ -41,51 +29,14 @@
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  users.users.nick = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" "audio" "bluetooth" "docker" ];
-  };
-
-  users.extraGroups.vboxusers.members = [ "nick" ];
-
-  environment.plasma6.excludePackages = with pkgs.kdePackages; [
-    plasma-browser-integration
-    spectacle
-    discover
-    elisa
-    khelpcenter
-    gwenview
-  ];
-
-  virtualisation.virtualbox = {
-    host.enable = true;
-    host.enableExtensionPack = true;
-    guest.enable = true;
-  };
-
-  virtualisation.docker = {
-    enable = true;
-    rootless = {
-      enable = true;
-      setSocketVariable = true;
-    };
-  };
-
-  systemd.tmpfiles.rules = [
-    "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}"
-  ];
-
   # List packages installed in system profile
   environment.systemPackages = with pkgs; [
     # Web Browsers
     firefox
-    opera
-    google-chrome
     tor-browser
 
     # Comms
     discord
-    slack
     zoom-us
 
     #Media
@@ -97,9 +48,7 @@
     # Utils
     flameshot
     autokey
-    input-remapper
-    # qbittorrent
-    clinfo
+    deluge
     woeusb
     xdotool
 
@@ -116,30 +65,16 @@
     # Development
     python3
     vscode
-    docker
-    docker-compose
-    kubernetes
     insomnia
-    # bruno
     git
     gh
-    
+
     # Bluetooth
     bluez
-    bluedevil
 
     # Nixos Specifics
     nil
     nixpkgs-fmt
-
-    # KDE Packages
-    kdePackages.okular
-    kdePackages.ark
-    kdePackages.dolphin
-    kdePackages.yakuake
-    kdePackages.kdeconnect-kde
-    kdePackages.konsole
-    kdePackages.kdenlive
   ];
 
   fonts.packages = with pkgs; [
@@ -156,6 +91,7 @@
 
   # rtkit is optional but recommended
   security.rtkit.enable = true;
+
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -193,19 +129,11 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-  services.xserver.videoDrivers = [ "amdgpu" ];
 
   services.displayManager.sddm = {
     enable = true;
     autoNumlock = true;
   };
-
-  services.displayManager.defaultSession = "plasmax11";
-  services.desktopManager.plasma6.enable = true;
-
-  # Enable Input Remapper
-  services.input-remapper.enable = true;
-  services.input-remapper.enableUdevRules = true; # optional, enables udev rules for hotplugged devices
 
   # DO NOT CHANGE THIS UNDER ANY CIRCUMSTANCE
   system.stateVersion = "24.05";
