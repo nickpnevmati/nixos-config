@@ -111,9 +111,7 @@
   };
 
   services.dbus.enable = true;
-
-  services.flatpak.enable = true;
-
+  
   # services.bluetooth.enable = true;
   hardware.bluetooth.enable = true;
 
