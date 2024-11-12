@@ -13,6 +13,7 @@
     ../../modules/packages/docker.nix
     ../../modules/packages/virtualbox.nix
     ../../modules/packages/input-remapper.nix
+    ../../modules/packages/editors.nix
     ../../modules/users/nick.nix
   ];
 
@@ -65,7 +66,6 @@
 
     # Development
     python3
-    vscode
     insomnia
     git
     gh
