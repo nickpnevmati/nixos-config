@@ -14,6 +14,7 @@
     ../../modules/packages/virtualbox.nix
     ../../modules/packages/input-remapper.nix
     ../../modules/packages/editors.nix
+    ../../modules/packages/languages.nix
     ../../modules/users/nick.nix
   ];
 
@@ -65,7 +66,6 @@
     ffmpeg
 
     # Development
-    python3
     insomnia
     git
     gh
