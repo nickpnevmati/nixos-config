@@ -5,14 +5,20 @@
 { config, lib, pkgs, ... }:
 
 {
-  imports = [
+  imports = 
     ./hardware-configuration.nix
-    ../../modules/packages/kde.nix
-    ../../modules/packages/work.nix
+
     ../../modules/packages/docker.nix
+    ../../modules/packages/editors.nix
+    ../../modules/packages/input-remapper.nix
+    ../../modules/packages/kde.nix
+    ../../modules/packages/languages.nix
     ../../modules/packages/virtualbox.nix
+    ../../modules/packages/work.nix
+    ../../modules/nix-ld.nix
+
     ../../modules/users/nick.nix
-  ];
+  ;
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
