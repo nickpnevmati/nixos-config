@@ -5,7 +5,7 @@
 { config, lib, pkgs, ... }:
 
 {
-  imports = 
+  imports = [
     ./hardware-configuration.nix
 
     ../../modules/packages/docker.nix
@@ -18,7 +18,7 @@
     ../../modules/nix-ld.nix
 
     ../../modules/users/nick.nix
-  ;
+  ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
