@@ -15,6 +15,9 @@
     ../../modules/packages/input-remapper.nix
     ../../modules/packages/editors.nix
     ../../modules/packages/languages.nix
+
+    ../../modules/nix-ld.nix
+
     ../../modules/users/nick.nix
   ];
 
