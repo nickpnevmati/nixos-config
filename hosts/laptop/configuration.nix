@@ -8,13 +8,15 @@
   imports = [
     ./hardware-configuration.nix
 
-    ../../modules/packages/docker.nix
-    ../../modules/packages/editors.nix
-    ../../modules/packages/input-remapper.nix
     ../../modules/packages/kde.nix
-    ../../modules/packages/languages.nix
-    ../../modules/packages/virtualbox.nix
     ../../modules/packages/work.nix
+    ../../modules/packages/docker.nix
+    ../../modules/packages/virtualbox.nix
+    ../../modules/packages/input-remapper.nix
+    ../../modules/packages/editors.nix
+    ../../modules/packages/languages.nix
+    ../../modules/packages/cli-utils.nix
+
     ../../modules/nix-ld.nix
 
     ../../modules/users/nick.nix
@@ -25,8 +27,9 @@
 
   time.hardwareClockInLocalTime = true;
 
-  networking.hostName = "nuclear-laptop";
+  networking.hostName = "nuclear-desktop";
   networking.networkmanager.enable = true;
+  networking.networkmanager.wifi.powersave = false;
 
   time.timeZone = "Europe/Athens";
 
@@ -54,25 +57,12 @@
     flameshot
     autokey
     deluge
-    woeusb
-    xdotool
 
     # Office
     libreoffice-qt6-fresh
 
-    # CLI Stuff
-    tree
-    wget
-    unzip
-    rar
-    ffmpeg
-
     # Development
-    python3
-    vscode
     insomnia
-    git
-    gh
 
     # Bluetooth
     bluez
@@ -116,7 +106,7 @@
   };
 
   services.dbus.enable = true;
-
+  
   # services.bluetooth.enable = true;
   hardware.bluetooth.enable = true;
 
@@ -125,6 +115,9 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
+
+  services.displayManager.defaultSession = "plasmax11";
+  services.desktopManager.plasma6.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb.layout = "us, gr";
