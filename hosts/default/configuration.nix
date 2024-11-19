@@ -15,6 +15,8 @@
     ../../modules/packages/input-remapper.nix
     ../../modules/packages/editors.nix
     ../../modules/packages/languages.nix
+    ../../modules/packages/cli-utils.nix
+    ../../modules/packages/zsh.nix
 
     ../../modules/nix-ld.nix
 
@@ -55,23 +57,12 @@
     flameshot
     autokey
     deluge
-    woeusb
-    xdotool
 
     # Office
     libreoffice-qt6-fresh
 
-    # CLI Stuff
-    tree
-    wget
-    unzip
-    rar
-    ffmpeg
-
     # Development
     insomnia
-    git
-    gh
 
     # Bluetooth
     bluez
