@@ -14,5 +14,7 @@
     pciutils
     dnsutils
     fzf
+    bat
+    thefuck
   ];
 }
