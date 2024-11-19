@@ -8,6 +8,6 @@
   programs.zsh = {
     enable = true;
     enableCompletion = true;
-    syntax-highlighting.enable = true;
+    syntaxHighlighting.enable = true;
   };
 }
