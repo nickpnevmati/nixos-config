@@ -16,6 +16,7 @@
     ../../modules/packages/editors.nix
     ../../modules/packages/languages.nix
     ../../modules/packages/cli-utils.nix
+    ../../modules/packages/cli-memes.nix
     ../../modules/packages/zsh.nix
 
     ../../modules/nix-ld.nix

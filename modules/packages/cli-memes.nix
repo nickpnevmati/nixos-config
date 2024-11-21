@@ -2,7 +2,8 @@
 
 {
   environment.systemPackages = with pkgs; [
-    nodejs_22
-    python3
+    figlet
+    cowsay
+    sl
   ];
 }
