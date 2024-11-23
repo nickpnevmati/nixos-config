@@ -53,6 +53,7 @@
     spotify
     stremio
     digikam
+    gimp
 
     # Utils
     flameshot

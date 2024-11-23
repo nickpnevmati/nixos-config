@@ -15,6 +15,6 @@
     dnsutils
     fzf
     bat
-    thefuck
+    zip
   ];
 }
