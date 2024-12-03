@@ -67,6 +67,8 @@
 
     # Bluetooth
     bluez
+    bluez-tools
+    bluez-experimental
 
     # Nixos Specifics
     nil
