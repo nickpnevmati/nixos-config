@@ -19,6 +19,7 @@
     ../../modules/packages/cli-memes.nix
 
     ../../modules/nix-ld.nix
+    ../../modules/audio.nix
 
     ../../modules/users/nick.nix
   ];
@@ -49,8 +50,6 @@
 
     unityhub
 
-
-
     #Media
     vlc
     spotify
@@ -69,11 +68,6 @@
     # Development
     insomnia
 
-    # Bluetooth
-    bluez
-    bluez-tools
-    bluez-experimental
-
     # Nixos Specifics
     nil
     nixpkgs-fmt
@@ -91,31 +85,13 @@
     proggyfonts
   ];
 
-  # rtkit is optional but recommended
-  security.rtkit.enable = true;
-
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    wireplumber.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-  };
-
-  services.pipewire.wireplumber.extraConfig.bluetoothEnhancements = {
-    "monitor.bluez.properties" = {
-      "bluez5.enable-sbc-xq" = true;
-      "bluez5.enable-hw-volume" = true;
-      "bluez5.roles" = [ "a2dp_sink" "a2dp_source" ];
-    };
-  };
-
   services.dbus.enable = true;
   
-  # services.bluetooth.enable = true;
-  hardware.bluetooth.enable = true;
+  
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+  };
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
