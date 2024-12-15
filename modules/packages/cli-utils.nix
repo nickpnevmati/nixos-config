@@ -17,5 +17,6 @@
     bat
     zip
     poppler_utils
+    imagemagick
   ];
 }
