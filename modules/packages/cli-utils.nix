@@ -16,5 +16,6 @@
     fzf
     bat
     zip
+    poppler_utils
   ];
 }
