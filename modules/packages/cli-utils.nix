@@ -18,5 +18,6 @@
     zip
     poppler_utils
     imagemagick
+    nmap
   ];
 }
