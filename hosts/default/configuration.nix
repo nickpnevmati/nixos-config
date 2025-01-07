@@ -61,6 +61,7 @@
     flameshot
     autokey
     deluge
+    opentabletdriver
 
     # Office
     libreoffice-qt6-fresh
