@@ -61,7 +61,6 @@
     flameshot
     autokey
     deluge
-    opentabletdriver
 
     # Office
     libreoffice-qt6-fresh
@@ -93,6 +92,8 @@
     enable = true;
     powerOnBoot = true;
   };
+
+  hardware.opentabletdriver.enable = true;
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
