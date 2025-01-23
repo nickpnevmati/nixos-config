@@ -19,5 +19,7 @@
     poppler_utils
     imagemagick
     nmap
+    zoxide
+    lsd
   ];
 }
