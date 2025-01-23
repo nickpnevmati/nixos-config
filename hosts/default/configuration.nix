@@ -93,6 +93,8 @@
     powerOnBoot = true;
   };
 
+  hardware.opentabletdriver.enable = true;
+
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 

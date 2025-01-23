@@ -11,6 +11,8 @@
     ../../modules/packages/kde.nix
 
     ../../modules/users/nick.nix
+
+    ../../modules/packages/cli-utils.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
@@ -41,6 +43,7 @@
     vlc
     spotify
     stremio
+    parsec-bin
 
     # Utils
     flameshot
