@@ -6,5 +6,6 @@
     jetbrains.rust-rover
     jetbrains.pycharm-community
     jetbrains.idea-community
+    jetbrains.rider
   ];
 }
