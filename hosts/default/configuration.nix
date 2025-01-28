@@ -67,7 +67,6 @@
 
     # Development
     insomnia
-    ollama-rocm
 
     # Nixos Specifics
     nil

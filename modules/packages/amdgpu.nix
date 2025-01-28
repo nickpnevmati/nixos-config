@@ -17,6 +17,7 @@
 
   environment.systemPackages = with pkgs; [
     clinfo
+    radeontop
   ];
 
   services.xserver.videoDrivers = [ "amdgpu" ];

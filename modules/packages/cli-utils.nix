@@ -18,6 +18,7 @@
     zip
     poppler_utils
     imagemagick
+    android-tools
     nmap
     zoxide
     lsd
