@@ -67,6 +67,7 @@
 
     # Development
     insomnia
+    dotnetCorePackages.dotnet_9.sdk
 
     # Nixos Specifics
     nil
