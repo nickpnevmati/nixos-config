@@ -102,8 +102,6 @@
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
 
-  programs.steam.enable = true;
-
   services.displayManager.defaultSession = "plasmax11";
   services.desktopManager.plasma6.enable = true;
 
