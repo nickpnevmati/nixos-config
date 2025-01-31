@@ -55,6 +55,7 @@
     spotify
     stremio
     digikam
+    blender
     gimp
 
     # Utils
