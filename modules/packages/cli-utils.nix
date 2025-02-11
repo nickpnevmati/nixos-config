@@ -22,5 +22,6 @@
     nmap
     zoxide
     lsd
+    stow
   ];
 }
