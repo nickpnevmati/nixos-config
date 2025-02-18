@@ -23,5 +23,6 @@
     zoxide
     lsd
     stow
+    oh-my-posh
   ];
 }
