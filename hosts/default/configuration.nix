@@ -78,13 +78,34 @@
 
   services.dbus.enable = true;
   
-  
-  hardware.bluetooth = {
-    enable = true;
-    powerOnBoot = true;
+  hardware = {
+    bluetooth = {
+      enable = true;
+      powerOnBoot = true;
+    };
+    
+    opentabletdriver.enable = true;
   };
 
-  hardware.opentabletdriver.enable = true;
+  services = {
+    xserver = {
+      enable = true;
+
+      xkb = {
+        layout = "us, gr";
+        options = "eurosign:e";
+      };
+    };
+
+    displayManager = {
+      defaultSession = "plasmax11";
+
+      sddm = {
+        enable = true;
+        autoNumlock = true;
+      };
+    };
+  };
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
@@ -92,20 +113,7 @@
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
 
-  services.displayManager.defaultSession = "plasmax11";
   services.desktopManager.plasma6.enable = true;
-
-  # Configure keymap in X11
-  services.xserver.xkb.layout = "us, gr";
-  services.xserver.xkb.options = "eurosign:e";
-
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
-  services.displayManager.sddm = {
-    enable = true;
-    autoNumlock = true;
-  };
 
   # DO NOT CHANGE THIS UNDER ANY CIRCUMSTANCE
   system.stateVersion = "24.05";
