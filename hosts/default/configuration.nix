@@ -105,15 +105,13 @@
         autoNumlock = true;
       };
     };
+
+    openssh.enable = true;
+
+    libinput.enable = true;
+    
+    desktopManager.plasma6.enable = true;
   };
-
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  services.libinput.enable = true;
-
-  services.desktopManager.plasma6.enable = true;
 
   # DO NOT CHANGE THIS UNDER ANY CIRCUMSTANCE
   system.stateVersion = "24.05";
