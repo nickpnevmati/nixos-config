@@ -3,6 +3,10 @@
 {
   security.rtkit.enable = true;
 
+  environment.systemPackages = with pkgs; [
+    easyeffects
+  ];
+
   services.pipewire = {
     enable = true;
 
