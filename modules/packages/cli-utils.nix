@@ -24,5 +24,6 @@
     lsd
     stow
     oh-my-posh
+    twilio-cli
   ];
 }
