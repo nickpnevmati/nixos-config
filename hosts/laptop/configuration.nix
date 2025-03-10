@@ -54,6 +54,7 @@
     stremio
     digikam
     gimp
+    parsec-bin
 
     # Utils
     flameshot
