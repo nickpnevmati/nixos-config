@@ -18,6 +18,7 @@
     ../../modules/packages/cli-utils.nix
     ../../modules/packages/cli-memes.nix
 
+    ../../modules/fonts.nix
     ../../modules/nix-ld.nix
     ../../modules/audio.nix
 
@@ -76,47 +77,41 @@
     nixpkgs-fmt
   ];
 
-  fonts.packages = with pkgs; [
-    noto-fonts
-    noto-fonts-cjk-sans
-    noto-fonts-emoji
-    liberation_ttf
-    fira-code
-    fira-code-symbols
-    mplus-outline-fonts.githubRelease
-    dina-font
-    proggyfonts
-  ];
-
   services.dbus.enable = true;
   
-  
-  hardware.bluetooth = {
-    enable = true;
-    powerOnBoot = true;
+  hardware = {
+    bluetooth = {
+      enable = true;
+      powerOnBoot = true;
+    };
+    
+    opentabletdriver.enable = true;
   };
 
-  hardware.opentabletdriver.enable = true;
+  services = {
+    xserver = {
+      enable = true;
 
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
+      xkb = {
+        layout = "us, gr";
+        options = "eurosign:e";
+      };
+    };
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  services.libinput.enable = true;
+    displayManager = {
+      defaultSession = "plasmax11";
 
-  services.displayManager.defaultSession = "plasmax11";
-  services.desktopManager.plasma6.enable = true;
+      sddm = {
+        enable = true;
+        autoNumlock = true;
+      };
+    };
 
-  # Configure keymap in X11
-  services.xserver.xkb.layout = "us, gr";
-  services.xserver.xkb.options = "eurosign:e";
+    openssh.enable = true;
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
-  services.displayManager.sddm = {
-    enable = true;
-    autoNumlock = true;
+    libinput.enable = true;
+    
+    desktopManager.plasma6.enable = true;
   };
 
   # DO NOT CHANGE THIS UNDER ANY CIRCUMSTANCE

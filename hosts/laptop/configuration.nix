@@ -17,6 +17,7 @@
     ../../modules/packages/languages.nix
     ../../modules/packages/cli-utils.nix
 
+    ../../modules/fonts.nix
     ../../modules/nix-ld.nix
 
     ../../modules/users/nick.nix
@@ -71,18 +72,6 @@
     # Nixos Specifics
     nil
     nixpkgs-fmt
-  ];
-
-  fonts.packages = with pkgs; [
-    noto-fonts
-    noto-fonts-cjk-sans
-    noto-fonts-emoji
-    liberation_ttf
-    fira-code
-    fira-code-symbols
-    mplus-outline-fonts.githubRelease
-    dina-font
-    proggyfonts
   ];
 
   # rtkit is optional but recommended

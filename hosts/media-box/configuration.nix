@@ -9,6 +9,7 @@
     ./hardware-configuration.nix
 
     ../../modules/packages/kde.nix
+    ../../modules/fonts.nix
 
     ../../modules/users/nick.nix
 
@@ -51,18 +52,6 @@
 
     # Bluetooth
     bluez
-  ];
-
-  fonts.packages = with pkgs; [
-    noto-fonts
-    noto-fonts-cjk
-    noto-fonts-emoji
-    liberation_ttf
-    fira-code
-    fira-code-symbols
-    mplus-outline-fonts.githubRelease
-    dina-font
-    proggyfonts
   ];
 
   # rtkit is optional but recommended
