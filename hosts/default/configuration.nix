@@ -57,6 +57,7 @@
     digikam
     blender
     gimp
+    parsec-bin
 
     # Utils
     flameshot
