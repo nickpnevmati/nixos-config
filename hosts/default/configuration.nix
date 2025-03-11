@@ -74,6 +74,8 @@
     # Nixos Specifics
     nil
     nixpkgs-fmt
+    
+    networkmanager-vpnc
   ];
 
   services.dbus.enable = true;
