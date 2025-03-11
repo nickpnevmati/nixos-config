@@ -58,6 +58,8 @@
     digikam
     blender
     gimp
+    parsec-bin
+    betaflight-configurator
 
     # Utils
     flameshot
