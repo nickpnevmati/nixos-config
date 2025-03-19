@@ -35,6 +35,7 @@
     # Web Browsers
     firefox
     tor-browser
+    google-chrome
 
     # Comms
     discord
@@ -88,6 +89,8 @@
 
   services.displayManager.defaultSession = "plasmax11";
   services.desktopManager.plasma6.enable = true;
+  services.displayManager.autoLogin.user = "nick";
+  
 
   # Configure keymap in X11
   services.xserver.xkb.layout = "us, gr";
