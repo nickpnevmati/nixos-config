@@ -104,6 +104,8 @@
     displayManager = {
       defaultSession = "plasmax11";
 
+      autoLogin.user = "nick";
+
       sddm = {
         enable = true;
         autoNumlock = true;
