@@ -12,7 +12,6 @@
     kcmutils
     bluedevil
     bluez-qt
-    kwallet-pam
   ];
 
   environment.plasma6.excludePackages = with pkgs.kdePackages; [
@@ -21,8 +20,12 @@
     discover
     elisa
     khelpcenter
-    gwenview
   ];
+  
+  security.pam.services.nick.kwallet ={
+    enable = true;
+    package = pkgs.kdePackages.kwallet-pam;
+  };
 
   # Allowed ports for KDEconnect
   networking.firewall = {

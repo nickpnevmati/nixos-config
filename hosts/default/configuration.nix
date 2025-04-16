@@ -33,6 +33,12 @@
   networking.hostName = "nuclear-desktop";
   networking.networkmanager.enable = true;
 
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [ 8000 ];
+    allowedUDPPorts = [ 8000 ];
+  };
+
   time.timeZone = "Europe/Athens";
 
   nixpkgs.config.allowUnfree = true;
@@ -77,18 +83,18 @@
     # Nixos Specifics
     nil
     nixpkgs-fmt
-    
+
     networkmanager-vpnc
   ];
 
   services.dbus.enable = true;
-  
+
   hardware = {
     bluetooth = {
       enable = true;
       powerOnBoot = true;
     };
-    
+
     opentabletdriver.enable = true;
   };
 
@@ -116,7 +122,7 @@
     openssh.enable = true;
 
     libinput.enable = true;
-    
+
     desktopManager.plasma6.enable = true;
   };
 
