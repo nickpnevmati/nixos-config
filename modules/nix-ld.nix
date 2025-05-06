@@ -5,6 +5,12 @@
   programs.nix-ld.libraries = with pkgs; [
     corretto11
     stdenv.cc.cc.lib
-    zlib # numpy
+
+    # PYTHON DEVELOPMENT IS ABSOLUTE BULLSHIT IN THIS OS
+    zlib
+    libGL
+    libGLU
+    xorg.libX11
+    # PYTHON DEVELOPMENT IS ABSOLUTE BULLSHIT IN THIS OS
   ];
 }
