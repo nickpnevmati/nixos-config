@@ -11,6 +11,9 @@
     gh
     woeusb
     xdotool
+    xbindkeys
+    sxhkd
+    xorg.xev
     pciutils
     dnsutils
     fzf
