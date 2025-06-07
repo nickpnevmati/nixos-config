@@ -2,6 +2,11 @@
 
 {
     fonts.packages = with pkgs; [
-        nerdfonts
+        nerd-fonts.fira-code
+        nerd-fonts.droid-sans-mono
+        nerd-fonts.noto
+        nerd-fonts.hack
+        nerd-fonts.ubuntu
+        # nerd-fonts.MPlus
     ];
 }

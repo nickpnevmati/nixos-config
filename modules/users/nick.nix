@@ -7,7 +7,6 @@
 
     packages = with pkgs; [
       zsh
-      nerdfonts
     ];
 
     shell = pkgs.zsh;

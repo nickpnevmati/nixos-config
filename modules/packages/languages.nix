@@ -4,11 +4,12 @@
   environment.systemPackages = with pkgs; [
     nodejs_22
     python3
-
-    rustc
-    cargo
-    rustfmt
-    rust-analyzer
     clippy
+
+    gcc
+    clang
+    rustup
+    openssl.dev
+    pkg-config
   ];
 }
