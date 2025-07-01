@@ -83,6 +83,7 @@
     nixpkgs-fmt
 
     networkmanager-vpnc
+    networkmanager-openvpn
   ];
 
   services.dbus.enable = true;

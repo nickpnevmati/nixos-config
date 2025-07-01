@@ -4,8 +4,7 @@
   environment.systemPackages = with pkgs; [
     slack
     google-chrome
-    cloudflare-warp
+    azuredatastudio
+    mysql-workbench
   ];
-
-  services.cloudflare-warp.enable = true;
 }
