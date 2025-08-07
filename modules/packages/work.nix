@@ -6,5 +6,6 @@
     google-chrome
     azuredatastudio
     mysql-workbench
-  ];
+    google-cloud-sdk
+  ]; 
 }

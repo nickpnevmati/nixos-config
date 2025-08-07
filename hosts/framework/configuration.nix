@@ -7,7 +7,6 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../../modules/packages/amdgpu.nix
     ../../modules/packages/kde.nix
     ../../modules/packages/work.nix
     ../../modules/packages/docker.nix
@@ -30,7 +29,7 @@
 
   time.hardwareClockInLocalTime = true;
 
-  networking.hostName = "nuclear-desktop";
+  networking.hostName = "nuclear-framework";
   networking.networkmanager.enable = true;
 
   networking.firewall = {
@@ -95,8 +94,6 @@
       enable = true;
       powerOnBoot = true;
     };
-
-    opentabletdriver.enable = true;
   };
 
   services = {

@@ -21,11 +21,6 @@
     elisa
     khelpcenter
   ];
-  
-  security.pam.services.nick.kwallet ={
-    enable = true;
-    package = pkgs.kdePackages.kwallet-pam;
-  };
 
   # Allowed ports for KDEconnect
   networking.firewall = {
