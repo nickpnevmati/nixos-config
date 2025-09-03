@@ -7,5 +7,5 @@
     azuredatastudio
     mysql-workbench
     google-cloud-sdk
-  ]; 
+  ];
 }
