@@ -14,18 +14,18 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/ea40f258-1b64-4693-be5e-d7663718e9ff";
+    { device = "/dev/disk/by-uuid/adb8cbf3-41ab-4ff6-9918-2ceb59874977";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/C601-668D";
+    { device = "/dev/disk/by-uuid/EDE8-E638";
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
     };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/d9864393-28fd-4b7d-be6a-58840fabddd8"; }
+    [ { device = "/dev/disk/by-uuid/790c7f41-7510-421d-9f7a-2a7b120696dd"; }
     ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
@@ -38,3 +38,9 @@
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
+
+#/dev/nvme0n1p3: LABEL_FATBOOT="BOOT" LABEL="BOOT" UUID="" BLOCK_SIZE="512" TYPE="vfat" PARTLABEL="ESP" PARTUUID="78e7474a-edbb-49aa-b887-23c2041ba9cc"
+#/dev/nvme0n1p1: LABEL="nixos" UUID="" BLOCK_SIZE="4096" TYPE="ext4" PARTLABEL="root" PARTUUID="02f3f90e-e5be-40e2-8e98-7222e096b6ea# "
+#/dev/nvme0n1p2: LABEL="swap" UUID="" TYPE="swap" PARTLABEL="swap" PARTUUID="23c1509b-91bf-4994-a808-650f5776b9e3"
+#/dev/loop0: BLOCK_SIZE="1048576" TYPE="squashfs"
+#/dev/sda2: SEC_TYPE="msdos" LABEL_FATBOOT="EFIBOOT" LABEL="EFIBOOT" UUID="1234-5678" BLOCK_SIZE="512" TYPE="vfat" PARTUUID="9fb6382f-02"
