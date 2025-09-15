@@ -29,5 +29,6 @@
     oh-my-posh
     twilio-cli
     qmk
+    pdftk
   ];
 }
