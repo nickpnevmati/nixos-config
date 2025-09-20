@@ -30,5 +30,6 @@
     twilio-cli
     qmk
     pdftk
+    nixos-generators
   ];
 }
