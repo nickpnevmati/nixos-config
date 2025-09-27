@@ -19,5 +19,7 @@
     syntaxHighlighting.enable = true;
   };
 
+  services.gnome.gnome-keyring.enable = true;
+
   environment.localBinInPath = true;
 }
