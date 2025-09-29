@@ -20,6 +20,7 @@
     discover
     elisa
     khelpcenter
+    kde-gtk-config
   ];
 
   # Allowed ports for KDEconnect
