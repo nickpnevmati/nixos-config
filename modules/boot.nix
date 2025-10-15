@@ -3,16 +3,28 @@
 {
     boot = {
         consoleLogLevel = 0;
-        kernelParams = [ "quiet" "splash" ];
+        initrd.verbose = false;
+        kernelParams = [ 
+            "quiet" 
+            "splash"
+            "loglevel=3"
+            "rd.systemd.show_status=false"
+            "rd.udev.log_priority=3"
+            "udev.log_priority=3"
+            "systemd.show_status=false"
+            "vt.global_cursor_default=0"
+            "consoleblank=0"
+        ];
         loader = {
             systemd-boot.enable = true;
-            loader = {
-                efi.canTouchEfiVariables = true;
-                timeout = 0;
-            };
+            efi.canTouchEfiVariables = true;
+            timeout = 0;
+        };
+        plymouth = {
+            enable = true;
+            theme = "bgrt";
         };
     };
 
-    systemd.showStatus = false;
 }
 
