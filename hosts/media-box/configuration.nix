@@ -14,6 +14,7 @@
     ../../modules/users/nick.nix
 
     ../../modules/packages/cli-utils.nix
+    ../../modules/packages/vpn.nix
   ];
 
   boot.loader.systemd-boot.enable = true;

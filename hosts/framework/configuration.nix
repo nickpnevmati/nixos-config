@@ -16,6 +16,7 @@
     ../../modules/packages/languages.nix
     ../../modules/packages/cli-utils.nix
     ../../modules/packages/cli-memes.nix
+    ../../modules/packages/vpn.nix
 
     ../../modules/fonts.nix
     ../../modules/nix-ld.nix
