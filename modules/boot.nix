@@ -11,7 +11,7 @@
                 timeout = 0;
             };
         };
-    }
+    };
 
     systemd.showStatus = false;
 }
