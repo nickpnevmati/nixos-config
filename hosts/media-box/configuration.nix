@@ -15,11 +15,8 @@
 
     ../../modules/packages/cli-utils.nix
     ../../modules/packages/vpn.nix
+    ../../modules/boot.nix
   ];
-
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.timeout = 0;
 
   time.hardwareClockInLocalTime = true;
 

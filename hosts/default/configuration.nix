@@ -22,12 +22,10 @@
     ../../modules/fonts.nix
     ../../modules/nix-ld.nix
     ../../modules/audio.nix
+    ../../modules/boot.nix
 
     ../../modules/users/nick.nix
   ];
-
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
 
   time.hardwareClockInLocalTime = true;
 
