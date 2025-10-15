@@ -33,6 +33,7 @@
 
   networking.hostName = "nuclear-desktop";
   networking.networkmanager.enable = true;
+  boot.loader.timeout = 0;
 
   networking.firewall = {
     enable = true;
