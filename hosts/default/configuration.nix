@@ -52,6 +52,8 @@
     firefox
     tor-browser
 
+    (callPackage ../../modules/packages/webots.nix {})
+
     # Comms
     discord
     zoom-us
