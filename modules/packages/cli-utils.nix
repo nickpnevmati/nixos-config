@@ -31,5 +31,6 @@
     qmk
     pdftk
     nixos-generators
+    lsof
   ];
 }
