@@ -9,5 +9,6 @@
     google-cloud-sdk
     firebase-tools
     redis
+    onedrive
   ];
 }
