@@ -19,7 +19,7 @@
     fzf
     bat
     zip
-    poppler_utils
+    poppler-utils
     imagemagick
     android-tools
     nmap

@@ -58,7 +58,6 @@
     #Media
     vlc
     spotify
-    stremio
     digikam
     blender
     gimp
