@@ -44,7 +44,6 @@
     #Media
     vlc
     spotify
-    stremio
     parsec-bin
 
     # Utils

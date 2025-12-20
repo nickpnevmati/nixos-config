@@ -63,7 +63,6 @@
     gimp
     obs-studio
 
-
     # Utils
     flameshot
     autokey

@@ -7,6 +7,5 @@
         nerd-fonts.noto
         nerd-fonts.hack
         nerd-fonts.ubuntu
-        # nerd-fonts.MPlus
     ];
 }

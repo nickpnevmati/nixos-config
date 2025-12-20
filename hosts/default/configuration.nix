@@ -63,12 +63,10 @@
     #Media
     vlc
     spotify
-    stremio
     digikam
     blender
     gimp
     obs-studio
-
 
     # Utils
     flameshot

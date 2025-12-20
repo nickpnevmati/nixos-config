@@ -10,26 +10,6 @@
   services.pipewire = {
     enable = true;
 
-    extraConfig.pipewire-pulse = {
-      "99-disable-auto-gain-control" = {
-        # "pulse.rules" = [
-        #   {
-        #     actions = {
-        #       quirks = [
-        #         "block-source-volume"
-        #       ];
-        #     };
-        #     matches = [
-        #       {
-        #         "application.process.binary" = "~.*";
-        #       }
-        #     ];
-        #   }
-        # ];
-      };
-    };
-
-    # audio.enable = true;
     pulse.enable = true;
 
     alsa = {

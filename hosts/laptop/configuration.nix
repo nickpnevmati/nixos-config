@@ -51,7 +51,6 @@
     #Media
     vlc
     spotify
-    stremio
     digikam
     gimp
     parsec-bin

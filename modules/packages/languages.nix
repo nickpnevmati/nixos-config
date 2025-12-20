@@ -8,7 +8,6 @@
 
     gcc
     clang
-    rustup
     openssl.dev
     pkg-config
     dotnet-sdk_9
