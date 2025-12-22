@@ -58,7 +58,7 @@
 
     # Utils
     flameshot
-    autokey
+    (callPackage ../../modules/packages/myautokey.nix {})
     deluge
 
     # Office
