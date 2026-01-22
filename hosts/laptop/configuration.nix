@@ -40,7 +40,6 @@
   # List packages installed in system profile
   environment.systemPackages = with pkgs; [
     # Web Browsers
-    # inputs.zen-browser.packages."${system}".default
     firefox
     tor-browser
 
